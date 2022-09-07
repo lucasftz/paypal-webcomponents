@@ -3,5 +3,20 @@
   "version": "1.0.0",
   "description": "Webcomponents for paypal elements! (Buttons, marks, etc). Currently in progress.",
   "main": "src/index.ts",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-node-resolve": "^14.0.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "babel-preset-solid": "^1.5.4",
+    "rollup": "^2.79.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "solid-element": "^1.5.4",
+    "solid-js": "^1.5.4"
+  }
 }
