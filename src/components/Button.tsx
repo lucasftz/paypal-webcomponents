@@ -22,7 +22,7 @@ function Button({ color }: Props) {
         position: "relative",
         width: "250px",
         "box-sizing": "border-box",
-        border: "none",
+        border: color === "white" ? "1px solid #2C2E2F" : "none",
         "vertical-align": "top",
         cursor: "pointer",
         outline: "none",
