@@ -33,8 +33,8 @@ function Button({ color }: Props) {
         "background-color": theme[color].bg,
       }}
     >
-      <span innerHTML={theme[color].pp} />
-      <span innerHTML={theme[color].paypal} />
+      <img src={theme[color].pp} />
+      <img src={theme[color].paypal} />
     </button>
   );
 }

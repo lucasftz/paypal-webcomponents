@@ -14,7 +14,7 @@ export default {
   },
   external: [],
   plugins: [
-    svg(),
+    svg({ base64: true }),
     replace({
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
