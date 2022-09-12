@@ -6,9 +6,10 @@ import paypalLogoWhite from "../assets/paypal-logo-white.svg";
 type Props = {
   color: "gold" | "blue" | "silver" | "white" | "black";
   shape: "rect" | "pill";
+  label: "paypal" | "checkout" | "buynow" | "pay";
 };
 
-function Button({ color, shape }: Props) {
+function Button({ color, shape, label }: Props) {
   const theme = {
     color: {
       gold: { bg: "#F6C657", pp: ppLogoBlue, paypal: paypalLogoBlue },
@@ -26,11 +27,16 @@ function Button({ color, shape }: Props) {
   return (
     <button
       style={{
+        "font-family": '"Helvetica Neue", Helvetica, Arial, sans-serif',
+        "font-weight": 500,
+        "font-size": "11px",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
         position: "relative",
         width: "250px",
         "box-sizing": "border-box",
         border: color === "white" ? "1px solid #2C2E2F" : "none",
-        "vertical-align": "top",
         cursor: "pointer",
         outline: "none",
         overflow: "hidden",
@@ -42,6 +48,7 @@ function Button({ color, shape }: Props) {
     >
       <img src={theme.color[color].pp} />
       <img src={theme.color[color].paypal} />
+      {label === "checkout" && <div>Checkout</div>}
     </button>
   );
 }
