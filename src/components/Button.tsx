@@ -1,3 +1,5 @@
+import Conditional from "./Conditional";
+
 import ppLogoBlue from "../assets/pp-logo-blue.svg";
 import paypalLogoBlue from "../assets/paypal-logo-blue.svg";
 import ppLogoWhite from "../assets/pp-logo-white.svg";
@@ -21,6 +23,10 @@ function Button({ color, shape, label }: Props) {
     shape: {
       rect: { radius: "4px" },
       pill: { radius: "18px" },
+    },
+    text: {
+      left: { paypal: "", pay: "Pay with" },
+      right: { checkout: "Checkout", buynow: "Buy now" },
     },
   };
 
@@ -46,9 +52,10 @@ function Button({ color, shape, label }: Props) {
         "background-color": theme.color[color].bg,
       }}
     >
+      <Conditional toRender={label} renderObj={theme.text.left} />
       <img src={theme.color[color].pp} />
       <img src={theme.color[color].paypal} />
-      {label === "checkout" && <div>Checkout</div>}
+      <Conditional toRender={label} renderObj={theme.text.right} />
     </button>
   );
 }
